@@ -1,10 +1,10 @@
 pipeline {
-  agent any
-  stages {
-    stage('') {
-      steps {
-        sh 'echo "Ok Google"'
-      }
+    agent { docker 'php' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'php --version'
+            }
+        }
     }
-  }
 }
